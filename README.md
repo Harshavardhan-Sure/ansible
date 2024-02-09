@@ -17,7 +17,7 @@ Create 2 files in the ansible-example folder
 * touch ansible.cfg
 
 
-# Open inventory and add target hosts inside this file(3 Ways)
+# Open inventory file and add target hosts (3 Ways)
 ## vim inventory
  1) With IP
   * `ipoftargetmachine ansible_user=ec2-user ansible_ssh_private_key_file=/home/ec2-user/ansible-example/keypair.pem`
@@ -36,7 +36,7 @@ Create 2 files in the ansible-example folder
 * `ansible_ssh_common_args='StrictHostKeyChecking=no'`
 
 
-# Open ancible.cfg and add location of inventory file
+# Open ancible.cfg and add inventory file path
 ## vim ancible.cfg
 
 * `[defaults]`
