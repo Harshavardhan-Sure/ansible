@@ -42,7 +42,7 @@ Create 2 files in the ansible-example folder
 * `[defaults]`
 * `Inventory=./inventory`
 
-# To ping a target machines
+# To ping Target machines
 
 * `ansible ipoftargetmachine -m ping`
 * `ansible all -m ping`
