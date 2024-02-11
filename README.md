@@ -9,12 +9,20 @@ via ssh :
 * By default python is available in ec2 instance.
 
 To install pip3:
-`sudo yum -y install python-pip`
+* `sudo yum -y install python-pip`
 
-## Create ansible-example (Any name) Folder:
-Create 2 files in the ansible-example folder
+Install ansible:
+* `pip3 install ansible`
+
+Check ansible version:
+* `ansible --version`
+
+## Create ansible-example (Any name) folder:
+Create 2 files in the ansible-example folder and keypair of target machine(s)
 * touch inventory
 * touch ansible.cfg
+* kepair.pem (Target machine(s) keypair)
+* chmod 400 keypair.pem
 
 
 # Open inventory file and add target hosts (3 Ways)
