@@ -1,4 +1,12 @@
 # ansible
+
+* Ansible is the automation tool or framework used for configuration management.
+
+* It uses SSH to connect to remote servers and execute tasks.
+
+* It is agentless, meaning you don't need to install any software on the managed nodes.
+
+  
 ## Create Control Machine(1) and Target Machine(1 or more)
 
 ## Login to Control Machine:
@@ -56,13 +64,41 @@ Create 2 files in the ansible-example folder and keypair of target machine(s)
 * `ansible all -m ping`
 * `ansible server -m ping`
 * `ansible dev -m ping`
+* ansible -a "free -h" server
+* ansible -a "uptime" server
 
 
 # Install Packages in target machines from Control Machine 
 ## To install git in all the machines
 
+# 1 Ad-Hoc Commands
 `ansible all -m yum -a "name=git state=present" --become`
 
+# 2 Playbooks: Your Automation Scripts
+
+* Playbooks are written in YAML and define a set of tasks to be executed on managed nodes. 
+* Playbooks provide a structured and reusable way to automate complex configurations and deployments.
+
+
+```
+---
+  - name: Playbook
+    hosts: dev
+    become: yes
+    become_user: root
+    tasks:
+      - name: ensure git is at the latest version
+        yum:
+          name: git
+          state: latest
+      - name: ensure apache is at the latest version
+        yum:
+          name: httpd
+          state: latest
+      - name: ensure apache is running
+        service:
+          name: httpd
+          state: started
 
 
 
