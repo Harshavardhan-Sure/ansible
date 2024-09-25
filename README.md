@@ -64,8 +64,8 @@ Create 2 files in the ansible-example folder and keypair of target machine(s)
 * `ansible all -m ping`
 * `ansible server -m ping`
 * `ansible dev -m ping`
-* ansible -a "free -h" server
-* ansible -a "uptime" server
+* `ansible -a "free -h" server`
+* `ansible -a "uptime" server`
 
 
 # Install Packages in target machines from Control Machine 
